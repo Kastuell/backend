@@ -59,7 +59,7 @@ app.delete('/posts/:id', checkAuth, PostController.remove);
 app.patch('/posts/:id', checkAuth, postCreateValidation, handleValidationErrors, PostController.update);
 
 
-app.listen('https://serverismart.netlify.app/', (err) => {
+app.listen(process.env.PORT || 4444, (err) => {
     if(err) {
         return console.log(err);
     }
@@ -67,10 +67,4 @@ app.listen('https://serverismart.netlify.app/', (err) => {
     console.log('Server OK');
 });
 
-// app.listen(process.env.PORT || 4444, (err) => {
-//     if(err) {
-//         return console.log(err);
-//     }
 
-//     console.log('Server OK');
-// });
